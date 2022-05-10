@@ -1,0 +1,16 @@
+A la création d'un ChargeurMagasin, on rentre le nom d'un répertoire, puis on utilise la méthode
+chargerMagasin().
+
+Cette méthode va créer un nouveau magasin et un nouveau ChargeurCD.
+Lors de la création du ChargeurCD, un nom de fichier est rentré, sûrement récupérer parmis les noms de
+fichier du répertoire rentrés en paramètre au début.
+
+Sur ce ChargeurCD, on fait appelle à la méthode chargerCD().
+
+Cette méthoe chargerCD va créer un nouveau CD en renseignant le nom de l'artiste et le nom du CD
+sûrement grâce au contenu du fichier, qui a été rentré en paramètre lors de la création du ChargeurCD.
+
+De là, les données (les pistes) à l'intérieur du fichier vont être récupérées pour être ajoutées au CD
+
+
+A la toute fin, la méthode chargerMagasin() ajoute le CD nouvellement créé au magasin.
