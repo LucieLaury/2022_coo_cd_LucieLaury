@@ -68,6 +68,15 @@ public class Magasin {
 		return(res);
 	}
 
-	// TODO  ajouter une methode de tri
+	public void trierAriste() {
+		//todo
+	}
+
+	public void trierAlbum() {
+
+		//todo
+	}
+
+
 //
 }
