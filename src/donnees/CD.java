@@ -118,4 +118,8 @@ public class CD {
 		return (this.nomArtiste.compareTo(cd.nomArtiste) < 0);
 	}
 
+
+	public String getNomCD() {
+		return nomCD;
+	}
 }

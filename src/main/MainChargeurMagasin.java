@@ -3,6 +3,8 @@ package main;
 import java.io.IOException;
 import java.util.Scanner;
 
+import donnees.ComparateurAlbum;
+import donnees.ComparateurArtiste;
 import donnees.Magasin;
 import XML.ChargeurMagasin;
 
@@ -21,19 +23,23 @@ public class MainChargeurMagasin {
 	 */
 	public static void main(String args[]) throws IOException {
 		
-		String repertoire = "../magasinCD_donnees/musicbrainzSimple/";
+		String repertoire = "musicbrainzSimple";
 		ChargeurMagasin charge = new ChargeurMagasin(repertoire);
 		Magasin resultat = charge.chargerMagasin();
-		System.out.println(resultat);
+		//System.out.println(resultat);
 
-		Scanner sc = new Scanner(System.in);
+		/*Scanner sc = new Scanner(System.in);
 		sc.nextLine();
 		sc.close();
+*/
 
-		resultat.trierAriste();
-		System.out.println(resultat);
+		ComparateurArtiste ca = new ComparateurArtiste();
+		resultat.trier(ca);
+		//System.out.println(resultat);
 
-		resultat.trierAlbum();
+
+		ComparateurAlbum caa = new ComparateurAlbum();
+		resultat.trier(caa);
 		System.out.println(resultat);
 
 	}

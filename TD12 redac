@@ -1,0 +1,30 @@
+Q3
+Rajouter d'autres méthodes de tri peut nécessiter de rajouter d'autres méthodes pouvant aider la
+méthode de tri (dans deux classes différentes probablement). De ce fait, ceci peut donner un long
+code pour que le résultat soit le même peut importe la méthode de tri utilisée.
+
+Q4
+Les méthodes de tri restent très prochent et peuvent donc avoir des copiés-collés de l'une à l'autre.
+Notamment le parcours de liste qui reste sensiblement le même.
+Si un code buggé vient à être copié-collé, cela dublique le bug et rend le programme bien moins exploitable
+ainsi que sa correction plus compliquée et plus longue.
+
+Q5
+Le parcours de tableau est exactement le même dans les deux méthodes de tri ainsi que la manière dont
+est modifiée les valeurs.
+Le seul moment qui diffère dans les deux méthodes de tri est l'appelle des méthodes de la classe CD.
+Les méthodes de vérification si un album est avant un autre ou si un Artiste est avant un autre.
+
+Q6
+Si un autre tri devrait remplacer celui-là, il faudrait modifier les deux méthodes en concervant la
+condition qui diffère
+
+
+SOLUTION:
+utilisation du système d'héritage => permet de supprimer la condition
+
+on veut cacher la méthode de condition.
+On définit une interface et des objets "ordre" qui permet de comparer des éléments et définir l'ordre
+du tri
+
+public void trie(Comparateur) {}

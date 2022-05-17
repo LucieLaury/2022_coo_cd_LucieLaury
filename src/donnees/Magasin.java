@@ -73,7 +73,7 @@ public class Magasin {
 	/**
 	 * permet de trier par nom d'artistes croissant
 	 */
-	public void trierAriste() {
+	/*public void trierAriste() {
 		// tri par selection
 		int nbCDs = this.listeCds.size();
 		for (int i = 0; i < nbCDs; i++) {
@@ -91,12 +91,12 @@ public class Magasin {
 			listeCds.set(indiceSelection, listeCds.get(i));
 			listeCds.set(i, cdSelectionne);
 		}
-	}
+	}*/
 
 	/**
 	 * permet de trier par nom d'album croissant
 	 */
-	public void trierAlbum() {
+	/*public void trierAlbum() {
 		// tri par selection
 		int nbCDs = this.listeCds.size();
 		for (int i = 0; i < nbCDs; i++) {
@@ -106,7 +106,31 @@ public class Magasin {
 			int indiceSelection = i;
 			for (int j = i + 1; j < nbCDs; j++) {
 				CD cdTemp = listeCds.get(j);
-				if (cdTemp.etreAvantAlbum(cdSelectionne)) {
+				if (cdTemp.etreAvantAlbum(cdSelectionne)) { //Ca c'est le truc à changer
+					indiceSelection = j;
+					cdSelectionne = cdTemp;
+				}
+			}
+			listeCds.set(indiceSelection, listeCds.get(i));
+			listeCds.set(i, cdSelectionne);
+		}
+	}*/
+
+	//MODIFICATION AVEC COMPARATEUR
+	//On se retrouve bien qu'avec une méthode et un identificateur caché derrière une interface
+	// l'interface étant implémentée, en fonction de l'objet passé, le code va être différent
+	//grâce à l'implémentation
+	public void trier(Comparateur comparateur) {
+		// tri par selection
+		int nbCDs = this.listeCds.size();
+		for (int i = 0; i < nbCDs; i++) {
+			CD cdSelectionne = this.listeCds.get(i);
+
+			//selectionne plus petit
+			int indiceSelection = i;
+			for (int j = i + 1; j < nbCDs; j++) {
+				CD cdTemp = listeCds.get(j);
+				if (comparateur.etreAvant(cdSelectionne, cdTemp)) { //Ca c'est le truc à changer
 					indiceSelection = j;
 					cdSelectionne = cdTemp;
 				}
@@ -117,5 +141,7 @@ public class Magasin {
 	}
 
 
-//
+
+
+
 }

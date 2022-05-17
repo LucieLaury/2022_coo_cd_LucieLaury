@@ -63,7 +63,5 @@ public class InfoPiste {
 		return ("" + min + ":" + sSecondes);
 	}
 
-	public String getNomPiste() {
-		return nomPiste;
-	}
+
 }
